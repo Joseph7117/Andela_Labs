@@ -1,18 +1,20 @@
 class Car(object):
-    def __init__(self, cartype, model, name):
+    
+    def __init__(self, cartype=None, model='GM', name='General', speed=0):
         self.cartype = cartype
         self.model = model
         self.name = name
+        self.speed = speed
 
         if self.name in ['Porsche', 'Koeingsegg']:
-            self.doors = 2
+            self.num_of_doors = 2
         else:
-            self.doors = 4
+            self.num_of_doors = 4
 
         if self.cartype == 'trailer':
-            self.wheels = 8
+            self.num_of_wheels = 8
         else:
-            self.wheels = 4
+            self.num_of_wheels = 4
 
     def getCarName(self):
         return self.name
@@ -23,7 +25,7 @@ class Car(object):
     def getCarType(self):
         return self.cartype
 
-    def is_salon(self):
+    def is_saloon(self):
         if self.cartype is not 'trailer':
             self.cartype == 'saloon'
             return True
@@ -35,3 +37,4 @@ class Car(object):
             self.speed = 77
         elif drvspeed == 3:
             self.speed = 1000
+        return self
