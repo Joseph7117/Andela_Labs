@@ -1,5 +1,3 @@
-global words
-
 def word_count(words):
   word_list = words.strip.replace("\n", " ").split()
   
